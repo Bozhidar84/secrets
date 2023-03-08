@@ -1,6 +1,7 @@
 
 require('dotenv').config();
 
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -100,7 +101,7 @@ app.get("/secrets", (req, res) =>
 {
     if (req.isAuthenticated)
     {
-        User.find({ secret: { $ne: null } }, (err, foundUsers) =>
+        User.find({ secret:  {$ne: null } }, (err, foundUsers) =>
         {
             if (err)
             {
